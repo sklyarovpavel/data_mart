@@ -1,6 +1,6 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "2.11"
+ThisBuild / scalaVersion := "2.11.12"
 
 val sparkVersion = "2.4.7"
 libraryDependencies ++= Seq(
@@ -8,10 +8,10 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "com.datastax.spark" %% "spark-cassandra-connector" % "2.4.3",
   "org.elasticsearch" %% "elasticsearch-spark-20" % "6.8.2",
-  "org.postgresql" % "postgresql" % "2.3.3"
+  "org.postgresql" % "postgresql" % "latest"
 )
 
 lazy val root = (project in file("."))
   .settings(
-    name := "lab03"
+    name := "data_mart"
   )
