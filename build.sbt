@@ -8,7 +8,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "com.datastax.spark" %% "spark-cassandra-connector" % "2.4.3",
   "org.elasticsearch" %% "elasticsearch-spark-20" % "6.8.2",
-  "org.postgresql" % "postgresql" % "latest"
+  "org.postgresql" % "postgresql" % "42.3.3"
 )
 
 lazy val root = (project in file("."))
