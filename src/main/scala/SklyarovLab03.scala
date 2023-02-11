@@ -1,6 +1,13 @@
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.expressions.UserDefinedFunction
 import org.apache.spark.sql.functions.udf
+import org.apache.commons.lang3.StringEscapeUtils
+import org.apache.spark.sql.functions.{col, sum}
+import org.apache.spark.sql.{DataFrame, Encoders, Row, SparkSession}
+
+
+import java.io.{FileWriter, PrintWriter}
+import java.net.{URL, URLDecoder}
 
 object SklyarovLab03 {
     //Внутри класса
