@@ -38,7 +38,7 @@ object SklyarovLab03 {
         }.getOrElse("")
       })
 
-      transformedLogs.select(col("uid"), decodeUrlAndGetDomain(col("url")).alias("domain"))
+//      transformedLogs.select(col("uid"), decodeUrlAndGetDomain(col("url")).alias("domain"))
       val cats: DataFrame = spark.read
         .format("jdbc")
         .option("url", "jdbc:postgresql://10.0.0.31:5432/labdata")
@@ -47,15 +47,15 @@ object SklyarovLab03 {
         .option("password", "I6iTUzqd")
         .option("driver", "org.postgresql.Driver")
         .load()
-      result.write
-        .format("jdbc")
-        .option("url", "jdbc:postgresql://10.0.0.31:5432/postgres") //как в логине к личному кабинету но _ вместо .
-        .option("dbtable", "clients")
-        .option("user", "pavel_sklyarov")
-        .option("password", "I6iTUzqd")
-        .option("driver", "org.postgresql.Driver")
-        .option("truncate", value = true) //позволит не терять гранты на таблицу
-        .mode("overwrite") //очищает данные в таблице перед записью
-        .save()
+//      result.write
+//        .format("jdbc")
+//        .option("url", "jdbc:postgresql://10.0.0.31:5432/postgres") //как в логине к личному кабинету но _ вместо .
+//        .option("dbtable", "clients")
+//        .option("user", "pavel_sklyarov")
+//        .option("password", "I6iTUzqd")
+//        .option("driver", "org.postgresql.Driver")
+//        .option("truncate", value = true) //позволит не терять гранты на таблицу
+//        .mode("overwrite") //очищает данные в таблице перед записью
+//        .save()
     }
 }
