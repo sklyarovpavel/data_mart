@@ -4,7 +4,8 @@ import org.apache.spark.sql.functions.udf
 import org.apache.commons.lang3.StringEscapeUtils
 import org.apache.spark.sql.functions.{col, sum}
 import org.apache.spark.sql.{DataFrame, Encoders, Row, SparkSession}
-
+import java.net.{URL, URLDecoder}
+import scala.util.Try
 
 import java.io.{FileWriter, PrintWriter}
 import java.net.{URL, URLDecoder}
